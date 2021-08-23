@@ -16,8 +16,8 @@ for (let office of Object.keys(config.offices)) {
 }
 
 Promise.all(promises).then(()=>{
-	// for (let tp of results) {
-		console.table(results)
-		// console.log(tp.office + ", " + tp.date[0]+'/'+tp.date[1]+'/'+tp.date[2]+": " + tp.count);
-	// }
+	results.sort((a,b)=>{
+		return ('' + a.office).localeCompare(b.office);
+	})
+	console.table(results)
 })
